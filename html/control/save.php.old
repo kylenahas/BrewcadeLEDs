@@ -1,0 +1,15 @@
+<?php
+if(isset($_POST['brightness'])) {
+    $data = $_POST['brightness'] . "\n" . $_POST['sw'];
+    $ret = file_put_contents('/home/leds/leds/conf/conf.txt', $data, LOCK_EX);
+    if($ret === false) {
+        die('There was an error writing this file');
+    }
+    else {
+        echo "Config Successfully Saved. <script>setTimeout(1000); window.history.back(); </script>";
+    }
+}
+else {
+   die('no post data to process');
+}
+?>

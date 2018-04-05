@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>LCD Editor</title>
+<link rel="stylesheet" href="css/lcd.css">
+</head>
+<body style="">
+
+<h2>Enter Text to be displayed on LCDs:</h2>
+<form action="save-lcd.php" method="post" style="padding-left: 50px;">
+
+	<table>
+		<tr>
+			<th> Left </th>
+			<th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+			<th> Center </th>
+			<th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+			<th> Right </th>
+		</tr>
+		<tr>
+			<td class="inside-lcd">
+				<input type="text" name="left1" maxlength="20" size="21" class="lcd-text" onkeyup="return checkInput(event)"> <br />
+				<input type="text" name="left2" maxlength="20" size="21" class="lcd-text" onkeyup="return checkInput(event)"> <br />
+				<input type="text" name="left3" maxlength="20" size="21" class="lcd-text" onkeyup="return checkInput(event)"> <br />
+				<input type="text" name="left4" maxlength="20" size="21" class="lcd-text" onkeyup="return checkInput(event)"> <br />
+			</td>
+			<td> </td>
+			<td class="inside-lcd">
+
+				<input type="text" name="center1" maxlength="40" size="41" class="lcd-text" onkeyup="return checkInput(event)"> <br />
+				<input type="text" name="center2" maxlength="40" size="41" class="lcd-text" onkeyup="return checkInput(event)"> <br />
+			</td>
+			<td> </td>
+			<td class="inside-lcd">
+				<input type="text" name="right1" maxlength="20" size="21" class="lcd-text" onkeyup="return checkInput(event)"> <br />
+				<input type="text" name="right2" maxlength="20" size="21" class="lcd-text" onkeyup="return checkInput(event)"> <br />
+				<input type="text" name="right3" maxlength="20" size="21" class="lcd-text" onkeyup="return checkInput(event)"> <br />
+				<input type="text" name="right4" maxlength="20" size="21" class="lcd-text" onkeyup="return checkInput(event)"> <br />
+			</td>
+		</tr>
+	</table>
+	<br />
+	<br />
+	<br />
+	<br />
+
+	<input type="submit" name="submit" value="Save Text">
+
+</form>
+
+<script type="text/javascript">
+
+function checkInput(e) {
+	var keynum;
+
+    if(window.event) { // IE                    
+      keynum = e.keyCode;
+    } else if(e.which){ // Netscape/Firefox/Opera                   
+      keynum = e.which;
+    }
+
+    if (keynum == 192) {
+    	alert("The characters '~', '|' or '`' are not allowed.");
+    }
+
+    if (keynum == 220) {
+    	alert("The characters '~', '|' or '`' are not allowed.");
+    }
+}
+
+</script>
+
+</body>
+
+</html>

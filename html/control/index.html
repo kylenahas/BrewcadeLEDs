@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="css/index.css">
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+<!-- 
+<link href="css/jtsage-datebox-4.0.0.jqm.min.css" rel="stylesheet" type="text/css">
+<script src="js/jtsage-datebox-4.0.0.jqm.min.js" type="text/javascript"></script>
+ -->
+
+<title>LED Configurator</title>
+
+</head>
+<body>
+<h2 style="text-align: center;">Slide to select brightness</h2>
+<form action="save.php" method="POST" style="padding-left: 20px; padding-right: 20px;"">
+
+	<input name="brightness" id="slider" type="range" min="0" max="255" value="185" step="1"   data-popup-enabled="true"  data-show-value="true"/>
+
+	<label for="switch">LEDS On/Off:</label>
+	<select id="switch" name="sw" data-role="flipswitch">
+        <option>Off</option>
+        <option selected="">On</option>
+    </select>
+
+<!-- 
+	* 1: Normal
+	* 2: Pride
+	~~~~~~~~~~~~~~~~~~~~~~-
+	* 3: Pride
+	* 4: Patriotic
+	* 5: St. Patrick's Day
+	* 6: Halloween
+	* 7: Christmas
+	~~~~~~~~~~~~~~~~~~~~~~-
+	* 8: Sharks
+	* 9: Warriors
+	* 10: Giants
+ -->
+	
+
+
+	<label for="theme-picker">Select Theme:</label>
+	<select name="thm" id="theme-picker">
+	  <optgroup label="Themes">
+	  	<option value="0" selected="">Green</option>
+	  	<option value="1">Purple/Blue</option>
+	  	<option value="2">Green/Purple</option>
+	  	<option value="3">Blue/Green</option>
+	  	<option value="4">Red/Yellow</option>
+	  	<option value="5">Slow Rainbow</option>
+	  </optgroup>
+	  <optgroup label="Holidays">
+	  	<option value="6">Pride</option>
+		<option value="9">Halloween</option>
+		<option value="10">Christmas</option>
+		<option value="7">New Years Eve</option>
+	  </optgroup>
+	  <optgroup label="Sports">
+		<option value="11">Sharks</option>
+		<option value="12">Warriors</option>
+		<option value="13">Giants</option>
+	  </optgroup>
+	</select>
+	<br />
+	
+	<label for="time-start">Select Time to Start:</label>
+	<input type="time" name="timeS" id="time-start" value="14:00">
+	<label for="time-end">Select Time to End:</label>
+	<input type="time" name="timeE" id="time-end" value="03:00">
+	
+
+	
+	<br /> <br />
+	<input type="submit" name="submit" value="Save Config">
+</form>
+
+<a href="lcd.html" data-role="button" data-ajax="false" style="padding-left: 20px; padding-right: 20px;">LCD Editor</a>
+
+
+<script type="text/javascript">
+</script>
+</body>
+</html>

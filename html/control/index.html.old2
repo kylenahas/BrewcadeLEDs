@@ -1,0 +1,18 @@
+<html>
+<body onload="showValue()">
+<h2>Slide to select brightness</h2>
+<form action="save.php" method="POST">
+	<input name="brightness" id="slider" type="range" min="0" max="255" value="185" step="1" onchange="showValue()" style="width: 500px;" />
+	<div id="range"> </div>
+	<input type="submit" name="submit" value="Save Config">
+</form>
+
+<script type="text/javascript">
+function showValue()
+{
+	document.getElementById("range").innerHTML=document.getElementById("slider").value;
+
+}
+</script>
+</body>
+</html>
